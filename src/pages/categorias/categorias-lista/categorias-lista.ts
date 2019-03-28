@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ToastController } from 'ionic-angular';
 import { CategoriasProvider } from './../../../providers/categorias/categorias';
 import { Observable } from 'rxjs/Observable';
+import { CategoriasEditaPage } from '../categorias-edita/categorias-edita';
 
 @IonicPage()
 @Component({
@@ -19,12 +20,13 @@ categorias: Observable<any[]>;
         this.categorias = this.categoriasProvider.getALL();
   }
 
-  newItemCategorias(categoria:any){
-    this.navCtrl.push('CategoriasEditaPage', {categoriakey: categoria.key});
+  newItemCategorias(){
+    this.navCtrl.push('CategoriasEditaPage');
 
   }
 
-  editItemCategoria(){
+  editItemCategoria(categoria:any){
+    this.navCtrl.push('CategoriasEditaPage', { categoriakey: categoria.key})
 
   }
 
