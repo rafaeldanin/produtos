@@ -16,7 +16,7 @@ export class CategoriasProvider {
 
   }
 
-  public getALL(){
+  public getAll(){
     return this.db.list(this.PATH)
       .snapshotChanges()
       .map(changes =>{
